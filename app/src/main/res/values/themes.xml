@@ -22,4 +22,13 @@
     <style name="Theme.KeepUp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.KeepUp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Theme.KeepUp.Keypad" parent="@style/Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textSize">@dimen/timer_key_pad</item>
+<!--        <item name="backgroundColor">@color/black</item>-->
+    </style>
+
+<!--    <style name="Theme.KeepUp.Keypad.Btn" parent="@style/Widget.MaterialComponents.Button."-->
+
+
 </resources>

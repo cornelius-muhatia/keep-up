@@ -1,4 +1,4 @@
-package com.cmuhatia.android.keepup.ui.gallery
+package com.cmuhatia.android.keepup.ui.timer
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

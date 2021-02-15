@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/timer_form"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:paddingTop="@dimen/list_item_spacing_half"
+    android:paddingBottom="@dimen/list_item_spacing_half"
+    tools:context=".ui.timer.TimerListDialogFragment">
+
+    <TextView
+        android:id="@+id/labelH1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/zero"
+        android:textSize="@dimen/timer_clock_char"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/labelH0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/zero"
+        android:textSize="@dimen/timer_clock_char"
+        app:layout_constraintStart_toEndOf="@+id/labelH1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="H"
+        android:textSize="@dimen/timer_clock_label"
+        app:layout_constraintBottom_toBottomOf="@+id/labelH0"
+        app:layout_constraintStart_toEndOf="@+id/labelH0" />
+
+    <TextView
+        android:id="@+id/labelM1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/zero"
+        android:textSize="@dimen/timer_clock_char"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/labelM0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/zero"
+        android:textSize="@dimen/timer_clock_char"
+        app:layout_constraintStart_toEndOf="@+id/labelM1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="M"
+        android:textSize="@dimen/timer_clock_label"
+        app:layout_constraintBottom_toBottomOf="@+id/labelM0"
+        app:layout_constraintStart_toEndOf="@+id/labelM0" />
+
+    <TextView
+        android:id="@+id/labelS1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/zero"
+        android:textSize="@dimen/timer_clock_char"
+        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/labelS0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/zero"
+        android:textSize="@dimen/timer_clock_char"
+        app:layout_constraintStart_toEndOf="@+id/labelS1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="S"
+        android:textSize="@dimen/timer_clock_label"
+        app:layout_constraintBottom_toBottomOf="@+id/labelS0"
+        app:layout_constraintStart_toEndOf="@+id/labelS0" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintTop_toBottomOf="@+id/labelM0"
+        tools:layout_editor_absoluteX="18dp" />
+
+
+
+    <Button
+        android:id="@+id/btnPad9"
+        style="@style/Theme.KeepUp.Keypad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnPad8" />
+
+
+    <Button
+        android:id="@+id/btnPad8"
+        style="@style/Theme.KeepUp.Keypad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="8"
+        app:layout_constraintEnd_toStartOf="@+id/btnPad9"
+        app:layout_constraintStart_toEndOf="@+id/btnPad7"
+        app:layout_constraintTop_toTopOf="@+id/btnPad7" />
+
+
+    <Button
+        android:id="@+id/btnPad7"
+        style="@style/Theme.KeepUp.Keypad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+
+    <Button
+        android:id="@+id/btnPad6"
+        style="@style/Theme.KeepUp.Keypad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnPad5" />
+
+
+    <Button
+        android:id="@+id/btnPad5"
+        style="@style/Theme.KeepUp.Keypad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="5"
+        app:layout_constraintEnd_toStartOf="@+id/btnPad6"
+        app:layout_constraintStart_toEndOf="@+id/btnPad4"
+        app:layout_constraintTop_toTopOf="@+id/btnPad4" />
+
+
+    <Button
+        android:id="@+id/btnPad4"
+        style="@style/Theme.KeepUp.Keypad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnPad7" />
+
+
+    <Button
+        android:id="@+id/btnPad3"
+        style="@style/Theme.KeepUp.Keypad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnPad2" />
+
+    <Button
+        android:id="@+id/btnPad1"
+        style="@style/Theme.KeepUp.Keypad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnPad4" />
+
+    <Button
+        android:id="@+id/btnPad2"
+        style="@style/Theme.KeepUp.Keypad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2"
+        app:layout_constraintEnd_toStartOf="@+id/btnPad3"
+        app:layout_constraintStart_toEndOf="@+id/btnPad1"
+        app:layout_constraintTop_toTopOf="@+id/btnPad1" />
+
+    <Button
+        android:id="@+id/btnPad0"
+        style="@style/Theme.KeepUp.Keypad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="0"
+        app:layout_constraintStart_toStartOf="@+id/btnPad2"
+        app:layout_constraintTop_toBottomOf="@+id/btnPad2" />
+
+    <ImageButton
+        android:id="@+id/btnOk"
+        style="@style/Theme.KeepUp.Keypad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/okay"
+        android:src="@drawable/ic_baseline_check_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnPad0" />
+
+
+    <ImageButton
+        android:id="@+id/btnBackspace"
+        style="@style/Theme.KeepUp.Keypad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="#3C2F2F"
+        android:contentDescription="@string/delete"
+        android:src="@drawable/ic_baseline_backspace_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnPad1" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

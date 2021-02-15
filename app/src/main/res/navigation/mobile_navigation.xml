@@ -12,10 +12,10 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.cmuhatia.android.keepup.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_new_timer"
+        android:name="com.cmuhatia.android.keepup.ui.timer.TimerGroupFragment"
+        android:label="@string/menu_new_timer"
+        tools:layout="@layout/fragment_new_timer" />
 
     <fragment
         android:id="@+id/nav_slideshow"

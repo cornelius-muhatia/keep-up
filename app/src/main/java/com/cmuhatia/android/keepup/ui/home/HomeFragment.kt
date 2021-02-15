@@ -8,7 +8,9 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.cmuhatia.android.keepup.R
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class HomeFragment : Fragment() {
 
@@ -26,6 +28,11 @@ class HomeFragment : Fragment() {
         homeViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
+        val newTimer: FloatingActionButton = root.findViewById(R.id.new_timers)
+        newTimer.setOnClickListener { view ->
+            val navController = findNavController()
+            navController.navigate(R.id.nav_new_timer)
+        }
         return root
     }
 }
