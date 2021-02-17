@@ -1,11 +1,18 @@
+
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
 }
 
+apply plugin: 'kotlin-kapt'
+
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
+    buildFeatures{
+        dataBinding = true
+    }
 
     defaultConfig {
         applicationId "com.cmuhatia.android.keepup"
@@ -48,6 +55,10 @@ dependencies {
     implementation 'com.jakewharton.timber:timber:4.7.1'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    // Room database
+    implementation "androidx.room:room-runtime:2.2.5"
+    kapt "androidx.room:room-compiler:2.2.5"
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'

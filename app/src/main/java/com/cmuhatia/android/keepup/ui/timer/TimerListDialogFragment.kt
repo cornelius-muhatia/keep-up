@@ -8,9 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
-import android.widget.Toast
 import androidx.core.content.ContextCompat
-import androidx.recyclerview.widget.RecyclerView
 import com.cmuhatia.android.keepup.R
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
@@ -40,7 +38,7 @@ class TimerListDialogFragment(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val root = inflater.inflate(R.layout.fragment_timer_form_list_dialog, container, false)
+        val root = inflater.inflate(R.layout.fragment_timer_form, container, false)
 
         labelS0 = root.findViewById(R.id.labelS0)
         labelS1 = root.findViewById(R.id.labelS1)
