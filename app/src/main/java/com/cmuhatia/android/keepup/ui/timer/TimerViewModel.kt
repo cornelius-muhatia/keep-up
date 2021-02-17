@@ -15,13 +15,6 @@ class TimerViewModel : ViewModel() {
     val text: LiveData<String> = _text
 
     /**
-     * Playlist item click listener
-     */
-    fun onTimerClicked(item: TimerEntity){
-        timerEntities.remove(item)
-    }
-
-    /**
      * Delete item from recycler view
      */
     fun onDeleteItem(item: TimerEntity){

@@ -32,7 +32,10 @@ class TimerGroupFragment  : CallbackInterface, Fragment(){
             dialog.show(parentFragmentManager, "timerDialog")
         }
 
-        val adapter = TimerAdapter(TimerItemListener{ entity: TimerEntity ->  timerViewModel.onTimerClicked(entity)})
+        val adapter = TimerAdapter(TimerItemListener{ entity: TimerEntity ->
+            timerViewModel.onDeleteItem(entity)
+            (binding.timersList.adapter as TimerAdapter).submitTimerList(timerViewModel.timerEntities)
+        })
         binding.timersList.adapter = adapter
         binding.timersList.layoutManager = LinearLayoutManager(activity)
         binding.addTimerGroup.visibility = View.INVISIBLE

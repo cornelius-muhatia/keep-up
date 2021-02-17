@@ -50,7 +50,6 @@ class TimerItemCallbackDiff : DiffUtil.ItemCallback<TimerEntity>() {
     }
 
     override fun areContentsTheSame(oldItem: TimerEntity, newItem: TimerEntity): Boolean {
-//        return oldItem.equals(newItem)
         return (oldItem.seconds == newItem.seconds)
     }
 }
@@ -60,8 +59,8 @@ class TimerItemViewHolder(private val viewDataBinding: ContentTimerItemBinding) 
 
     fun bind(item: TimerEntity, clickListener: TimerItemListener){
         viewDataBinding.item = item
-        viewDataBinding.executePendingBindings()
         viewDataBinding.clickListener = clickListener
+        viewDataBinding.executePendingBindings()
     }
     companion object {
         fun from(parent: ViewGroup): TimerItemViewHolder {
