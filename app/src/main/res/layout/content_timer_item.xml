@@ -33,7 +33,6 @@
 
         <ImageView
             android:id="@+id/imageView2"
-            android:tag="@{item.id}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="@{() -> clickListener.onClick(item)}"
