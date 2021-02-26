@@ -2,11 +2,14 @@ package com.cmuhatia.android.keepup
 
 import android.app.Application
 import timber.log.Timber
+import timber.log.Timber.DebugTree
 
 class KeepupApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        Timber.plant(Timber.DebugTree())
+        if (BuildConfig.DEBUG) {
+            Timber.plant(DebugTree())
+        }
     }
 }

@@ -1,15 +1,12 @@
 package com.cmuhatia.android.keepup.ui.timer
 
 import android.os.Bundle
-import android.os.Parcelable
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.cmuhatia.android.keepup.R
@@ -18,7 +15,7 @@ import com.cmuhatia.android.keepup.entities.TimerEntity
 import com.cmuhatia.android.keepup.repository.KeepUpDatabase
 import timber.log.Timber
 
-class TimerGroupFragment  : CallbackInterface, Fragment(){
+class TimerGroupFragment()  : CallbackInterface, Fragment(){
 
     private lateinit var timerViewModel: TimerViewModel
     private lateinit var binding: FragmentNewTimerBinding
@@ -75,8 +72,10 @@ class TimerGroupFragment  : CallbackInterface, Fragment(){
     }
 
     override fun callback(label: String, seconds: Long){
-        binding.timerViewModel!!.timerEntities.add(
-            TimerEntity(seconds, label))
+        val entity = TimerEntity()
+        entity.seconds = seconds
+        entity.label = label
+        binding.timerViewModel!!.timerEntities.add(entity)
         (binding.timersList.adapter as TimerAdapter).submitTimerList(ArrayList(binding.timerViewModel!!.timerEntities))
         if(binding.timerViewModel!!.timerEntities.isNotEmpty()){
             binding.addTimerGroup.visibility = View.VISIBLE

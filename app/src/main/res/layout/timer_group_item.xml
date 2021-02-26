@@ -1,14 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<layout xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="groupTimerCounts"
+            type="java.lang.Integer" />
+        <variable
+            name="homeViewModel"
+            type="com.cmuhatia.android.keepup.ui.home.HomeViewModel" />
+        <variable
+            name="timerGroup"
+            type="com.cmuhatia.android.keepup.entities.TimerGroup" />
+        <variable
+            name="clickListener"
+            type="com.cmuhatia.android.keepup.ui.home.TimerGroupListener" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:onClick="@{() -> clickListener.onClick(timerGroup)}">
+
 
     <TextView
         android:id="@+id/itemGroupTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@{timerGroup.title}"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Test Ltd" />
@@ -17,16 +37,29 @@
         android:id="@+id/groupTimerCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:text="@{@string/timer_count(groupTimerCounts)}"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/itemGroupTitle"
         tools:text="10 Timers" />
 
     <ImageView
         android:id="@+id/itemDelGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/delete"
+        android:onClick="@{() -> homeViewModel.deleteGroup(timerGroup.id)}"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/ic_menu_delete" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/group_timer_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:checked="true"
+        app:layout_constraintBottom_toTopOf="@+id/itemDelGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

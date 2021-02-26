@@ -46,10 +46,11 @@ class TimerViewModel(private val timerRepo: TimerGroupDao) : ViewModel() {
     fun submitGroup(groupTitle: String){
         ioScope.launch {
             val title = if (groupTitle.isBlank()) "Group" else groupTitle
-            val group = TimerGroup(title)
-            timerRepo.insert(group)
+            val group = TimerGroup()
+            group.title = title
+            val groupId: Long = timerRepo.insert(group)
             timerEntities.forEach { entity ->
-                entity.groupId = group.id
+                entity.groupId = groupId
             }
             timerRepo.insertAll(timerEntities)
 

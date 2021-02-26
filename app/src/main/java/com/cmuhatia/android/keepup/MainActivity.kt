@@ -1,5 +1,6 @@
 package com.cmuhatia.android.keepup
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -12,6 +13,7 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.app.JobIntentService.enqueueWork
 
 class MainActivity : AppCompatActivity() {
 
@@ -31,6 +33,13 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_home, R.id.nav_new_timer, R.id.nav_slideshow), drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+        //Start background service
+//        Intent(this, KeepUpTimersService::class.java).also { intent ->
+//            startService(intent)
+//        }
+        val timerService = Intent(this, KeepUpTimersService::class.java)
+        enqueueWork(this.applicationContext,  KeepUpTimersService::class.java, 1614225663, timerService)
+
 
     }
 
